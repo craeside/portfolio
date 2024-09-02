@@ -24,13 +24,23 @@
     src: url("fonts/Unbounded-VariableFont_wght.ttf") format("woff2-variations");
     font-style: normal;
   }
+  @font-face {
+    font-family: "Figtree";
+    src: url("fonts/Figtree-VariableFont_wght") format("woff2-variations");
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Figtree Italic";
+    src: url("fonts/Figtree-Italic-VariableFont_wght") format("woff2-variations");
+    font-style: italic;
+  }
   
   
   body, html {
     color: var(--black);
     margin: 0 auto;
     font-size: 8px;
-    font-family: 'Unbounded', monospace;
+    font-family: 'Figtree', sans-serif;
     font-feature-settings: 'tnum' on, 'lnum' on, 'ordn' on;
     font-weight: 100;
     font-style: normal;
@@ -50,11 +60,21 @@
   h1, h2, h3, h4 {
     font-family: 'Unbounded', monospace;
     font-weight: normal;
-    font-size: 9rem;
     line-height: 1em;
     letter-spacing: 0px;
     margin-block-start: 0;
     margin-block-end: 0;
+  }
+
+  h1 {
+    font-size: 9rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
   }
 
    .subtitle, #homepage #main p.subtitle {
@@ -65,8 +85,8 @@
   }
   
   p, li, a {
-    max-width: 1000px;
-    font-size: 2.5rem;
+    max-width: 768px;
+    font-size: 2.2rem;
     margin-block-start: 0;
   }
 
@@ -107,7 +127,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     background-color: transparent;
-    gap: 48px;
+    gap: 32px;
   }
 
   #hero {
@@ -135,6 +155,8 @@
   }
 
   .subheader {
+    font-family: 'Unbounded', monospace;
+    font-style: normal;
     font-size: 2rem;
     font-weight: 250;
     text-transform: uppercase;
@@ -175,6 +197,8 @@
   }
 
   #homepage #main a, #homepage #header-menu a {
+    font-family: 'Unbounded', monospace;
+    font-style: normal;
     font-size: 3rem;
     line-height: 150%;
     text-decoration: none;
@@ -422,6 +446,7 @@
     object-fit: cover;
     display: flex;
     justify-content: center;
+    margin-bottom: 10vh;
   }
 
   .offset-grid {
@@ -511,6 +536,8 @@
 
   
   #header-menu {
+    font-family: 'Unbounded', monospace;
+    font-style: normal;
     display: flex;
     padding: 3vw 48px 0 48px;
     flex-direction: row-reverse;
@@ -528,6 +555,11 @@
     text-decoration: none;
     font-size: 12px;
     line-height: 1.6em;
+  }
+
+  #header-menu a:hover {
+    text-decoration: underline;
+    transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
   .nav {

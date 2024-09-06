@@ -223,8 +223,8 @@
   }
   #homepage #logo:hover {
     filter: 
-      drop-shadow(8px 8px 0px #4444dd)
-      drop-shadow(-8px -8px 0px #ff0000);
+      drop-shadow(8px 8px 0px rgba(0,0,250,0.8))
+      drop-shadow(-8px -8px 0px rgba(250,0,0,0.8));
       transition: all 550ms cubic-bezier(0.165, 0.84, 0.44, 1);
       
   }

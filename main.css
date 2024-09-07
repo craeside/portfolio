@@ -904,11 +904,11 @@
     }
 
     .subtitle {
-      font-size: 3rem;
+      font-size: 4rem;
     }
 
     #homepage #main a, #homepage #header-menu a {
-      font-size: 2rem;
+      font-size: 2.5rem;
       line-height: 6rem;
       font-weight: 420;
     }
@@ -938,7 +938,7 @@
       font-size: 40px;
     }
     .design-project p, .design-project a, .design-project li {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
     .nav {

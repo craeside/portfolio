@@ -26,12 +26,12 @@
   }
   @font-face {
     font-family: "Figtree";
-    src: url("fonts/Figtree-VariableFont_wght") format("woff2-variations");
+    src: url("fonts/Figtree-VariableFont_wght.ttf") format("woff2-variations");
     font-style: normal;
   }
   @font-face {
     font-family: "Figtree Italic";
-    src: url("fonts/Figtree-Italic-VariableFont_wght") format("woff2-variations");
+    src: url("fonts/Figtree-Italic-VariableFont_wght.ttf") format("woff2-variations");
     font-style: italic;
   }
   
@@ -85,8 +85,7 @@
   }
   
   p, li, a {
-    max-width: 768px;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     margin-block-start: 0;
   }
 
@@ -163,6 +162,60 @@
     margin-bottom: 0;
   }
 
+  aside {
+    padding: 2rem;
+    background: #FCEDE3;
+    font-size: 2rem;
+    float: right;
+    border-radius: 7px;
+  }
+
+  .highlight, .underscore, .circle {
+  position: relative;
+  display: inline-block;
+  }
+
+  .highlight::after {
+    content:url(img/highlight.svg);
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+  }
+
+  .underscore::after {
+    content:url(img/underscore.svg);
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 20px;
+    z-index: -1;
+  }
+
+  .circle::after {
+    content:url(img/circle.svg);
+    position: absolute;
+    bottom: -30%;
+    left: -5%;
+    width: 110%;
+    height: auto;
+    z-index: -1;
+  }
+
+  .content {
+    max-width: 768px;
+    gap: 24px;
+    margin: 0 auto;
+  }
+  .content p {
+    margin-bottom: 16px;
+  }
+  .content h2 {
+    margin: 54px 0 16px 0;
+  }
 
 /*
 === HOME ========================================================================================================
@@ -218,16 +271,19 @@
     height: auto;
     max-width: 900px;
     opacity: 0;
-    animation: fadeIn 1200ms ease-in-out 2300ms forwards;
-    transition: all 350ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: 
+    fadeIn 1200ms ease-in-out 2300ms forwards;
+    transition: filter 350ms cubic-bezier(0.165, 0.84, 0.44, 1);
   }
-  #homepage #logo:hover {
+  
+
+/*   
+   #homepage #logo:hover {
     filter: 
       drop-shadow(8px 8px 0px rgba(0,0,250,0.8))
       drop-shadow(-8px -8px 0px rgba(250,0,0,0.8));
-      transition: all 550ms cubic-bezier(0.165, 0.84, 0.44, 1);
-      
-  }
+      transition: filter 550ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  }  */
 
   #homepage #header-menu {
     padding: 3vw 10vw;
@@ -235,6 +291,12 @@
     justify-content: center;
     opacity: 0;
     animation: fadeIn 1600ms ease-in-out 2600ms forwards;
+  }
+
+  #homepage h3 {
+    opacity: 0;
+    animation: fadeIn 1400ms ease-in-out 3200ms forwards;
+    font-weight: 100;
   }
 
   #homepage #main {
@@ -618,10 +680,15 @@
   @keyframes fadeIn {
     0% {
       opacity: 0;
+      transform: translateY(8px);
+    }
+    50% {
+      opacity: 0;
     }
   
     100% {
       opacity: 1;
+      transform: translateY(0);
     }
   }
   
@@ -775,11 +842,33 @@
   }
   
   .fadeIn {
-    animation: fadeIn 1s ease-in-out 2500ms forwards;
+    animation: fadeIn 1800ms ease-in 2400ms forwards;
   }
   
   .fadeOut {
     animation: fadeOut 1s ease-in-out 1400ms forwards;
+  }
+
+  @keyframes threeDee {
+    0% {
+      filter: 
+      drop-shadow(0px 0px 0px rgba(0,0,250,0.8))
+      drop-shadow(0px 0px 0px rgba(250,0,0,0.8));
+      transition: filter 550ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+  
+    50% {
+      filter: 
+      drop-shadow(8px 8px 0px rgba(0,0,250,0.8))
+      drop-shadow(-8px -8px 0px rgba(250,0,0,0.8));
+      transition: filter 550ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    100% {
+      filter: 
+      drop-shadow(0px 0px 0px rgba(0,0,250,0.8))
+      drop-shadow(0px 0px 0px rgba(250,0,0,0.8));
+      transition: filter 550ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
   }
   
 

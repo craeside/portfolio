@@ -164,10 +164,18 @@
 
   aside {
     padding: 2rem;
-    background: #FCEDE3;
-    font-size: 2rem;
+    margin: 1rem;
+    background: #F9F7F1;
+    font-size: 1.5rem;
     float: right;
     border-radius: 7px;
+    width: 200px;
+  }
+
+  aside img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 4px;
   }
 
   .highlight, .underscore, .circle {
@@ -176,45 +184,51 @@
   }
 
   .highlight::after {
-    content:url(img/highlight.svg);
+    content:'';
+    background-image: url('img/highlight.svg');
+    background-size: 100% 100%;
     position: absolute;
     top: 2px;
     left: 0px;
     width: 100%;
-    height: auto;
+    height: 100%;
     z-index: -1;
   }
 
   .underscore::after {
-    content:url(img/underscore.svg);
+    content:'';
+    background-image: url('img/underscore.svg');
+    background-size: 100% 100%;
     position: absolute;
-    top: 0;
-    left: 0px;
-    width: 100%;
+    top: 1.3em;
+    left: -5%;
+    width: 110%;
     height: 20px;
     z-index: -1;
   }
 
   .circle::after {
-    content:url(img/circle.svg);
+    content:'';
+    background-image: url('img/circle.svg');
+    background-size: 100% 100%;
     position: absolute;
-    bottom: -30%;
+    top: 0;
     left: -5%;
     width: 110%;
-    height: auto;
+    height: 100%;
     z-index: -1;
+    overflow: visible;
   }
 
   .content {
     max-width: 768px;
-    gap: 24px;
     margin: 0 auto;
   }
   .content p {
     margin-bottom: 16px;
   }
   .content h2 {
-    margin: 54px 0 16px 0;
+    margin: 96px 0 16px 0;
   }
 
 /*
@@ -554,7 +568,7 @@
   }
   
   .design-project #main p {
-    line-height: 1.6em;
+    line-height: 1.8em;
   }
   
   .project-img {
@@ -1041,6 +1055,12 @@
       max-width: none;
       max-height: none;
       padding: 0;
+    }
+
+    aside {
+      width: 90%;
+      float: left;
+      margin: 2rem 0;
     }
   }
   

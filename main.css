@@ -396,61 +396,24 @@
     padding: 10vh 10vw;
     left: 0;
     z-index: 10;
-    font-size: 2rem;
     background: var(--black);
-  }
-  
-  .load-bar {
-    width: 100%;
-    height: 150px;
-    margin: 0 auto;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .line {
-    width: 1px;
-    background: var(--offWhite);
-    display: inline-block;
-    height: 100%;
-    margin: 0px 2px;
-    opacity: 0;
-    vertical-align: bottom;
-    animation: fade-in-and-out 4400ms ease-out infinite;
-  }
-  
-  .load-bar .line:nth-of-type(2n+1) {
-    animation-delay: 300ms;
-  }
-  
-  .load-bar .line:nth-of-type(3n+2) {
-    animation-delay: 400ms;
-    animation-duration: 1550ms;
-  }
-
-  .load-bar .line:nth-of-type(6n+3) {
-    animation-delay: 600ms;
-    animation-duration: 1850ms;
-  }
-  
-  .load-bar .line:nth-of-type(5n+3) {
-    animation-delay: 500ms;
-    animation-duration: 1500ms;
   }
   
   p.message::after {
     content: "";
     text-align: left;
-    width: 10vw;
-    animation: imWaiting 5400ms linear infinite;
+    display: inline;
+    animation: wordCycle 5400ms linear infinite;
   }
   
-  #loader p {
+  p.message {
     margin: 0 auto;
-    text-align: center;
-    padding-top: 5vh;
+    text-align: left;
+    padding-top: 2rem;
+    color: var(--offWhite);
+    font-size: 6rem;
+    font-weight: 500;
+    font-family: 'Unbounded', monospace;
   }
   
 
@@ -494,7 +457,7 @@
     margin-left: 16px;
     background: var(--offWhite);
     color: var(--black);
-    font-family: 'Unbounded', sans-serif;
+    font-family: 'Unbounded', monospace;
     margin: 0;
     transition: all 350ms cubic-bezier(0.22, 1, 0.36, 1) 50ms;
   }
@@ -718,140 +681,57 @@
     }
   }
   
-  @keyframes imWaiting {
+  @keyframes wordCycle {
     0% {
-      content: "";
-    }
-  
-    1% {
-      content: "y";
-    }
-  
-    2% {
-      content: "yo";
-    }
-  
-    3% {
-      content: "you";
-    }
-  
-    4% {
-      content: "you ";
-    }
-  
-    5% {
-      content: "you a";
-    }
-  
-    6% {
-      content: "you ar";
-    }
-  
-    7% {
-      content: "you are";
-    }
-  
-    8% {
-      content: "you are ";
-    }
-  
-    9% {
-      content: "you are l";
-    }
-  
-    10% {
-      content: "you are lo";
-    }
-  
-    11% {
-      content: "you are loa";
-    }
-  
-    12% {
-      content: "you are load";
-    }
-  
-    13% {
-      content: "you are loadi";
-    }
-  
-    14% {
-      content: "you are loadin";
-    }
-  
-    15% {
-      content: "you are loading";
-    }
-  
-    16% {
-      content: "you are loading ";
-    }
-  
-    17% {
-      content: "you are loading .";
-    }
-  
-    18% {
-      content: "you are loading ..";
-    }
-  
-    19% {
-      content: "you are loading ...";
+      content: "magical";
+      color: #FF3661;
     }
   
     20% {
-      content: "you are loading ...";
+      content: "magical";
+      color: #FF3661;
     }
-  
-    30% {
-      content: "you are loading ..";
+
+    21% {
+      content: "beautiful";
+      color: #FF3694;
     }
-  
+
     40% {
-      content: "you are loading .";
+      content: "beautiful";
+      color: #FF3694;
     }
-  
-    50% {
-      content: "you are loading ";
+
+    41% {
+      content: "fun";
+      color: #A34EEF;
     }
   
     60% {
-      content: "you are loading .";
+      content: "fun";
+      color: #A34EEF;
     }
-  
-    70% {
-      content: "you are loading ..";
+
+    61% {
+      content: "stunning";
+      color: #36FFA1;
     }
   
     80% {
-      content: "you are loading ...";
+      content: "stunning";
+      color: #36FFA1;
     }
   
-    90% {
-      content: "you are loading ....";
+    81% {
+      content: "interesting";
+      color: #F2CB4E;
       opacity: 1;
     }
-  
+
     100% {
-      content: "you are loading ....";
-      opacity: 0;
-    }
-  }
-  
-  @keyframes fade-in-and-out {
-    0% {
-      opacity: 0;
-      height: 0%;
-    }
-  
-    50% {
-      opacity: 0.6;
-      height: 80%;
-    }
-  
-    100% {
-      opacity: 0;
-      height: 100%;
+      content: "interesting";
+      color: #F2CB4E;
+      opacity: 1;
     }
   }
   

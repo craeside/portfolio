@@ -97,3 +97,8 @@ function smoothScroll(target, speed, smooth) {
 		);
 	})();
 }
+
+window.onload=function(){
+	smoothbb();
+	//loadMe();
+	}

@@ -402,13 +402,13 @@
   p.message::after {
     content: "";
     text-align: left;
-    display: inline-block;
-    animation: wordCycle 8400ms ease-in-out 350ms infinite;
+    display: block;
+    animation: wordCycle 7400ms cubic-bezier(0.165, 0.84, 0.44, 1) 250ms infinite;
   }
   
   p.message {
     margin: 0 auto;
-    max-width: 700px;
+    max-width: 420px;
     text-align: left;
     padding-top: 2rem;
     color: var(--offWhite);
@@ -1002,6 +1002,10 @@
       width: 90%;
       float: left;
       margin: 2rem 0;
+    }
+
+    p.message {
+      font-size: 4.5rem;
     }
   }
   

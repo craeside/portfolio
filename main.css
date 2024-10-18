@@ -49,10 +49,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 1;
+  }
+
+  body {
+    position: relative;
+    overflow-x: hidden;
     width: 100%;
     max-width: 2000px;
-    overflow-x: hidden;
-    position: relative;
     display: flex;
     flex-direction: column;
   }
@@ -397,6 +400,7 @@
     left: 0;
     z-index: 10;
     background: var(--black);
+    overflow: hidden;
   }
   
   p.message::after {
@@ -790,9 +794,13 @@
       visibility: visible;
     }
   
-    100% {
+    99% {
       opacity: 0;
       visibility: hidden;
+    }
+    100% {
+      opacity: 0;
+      display: none;
     }
   }
   

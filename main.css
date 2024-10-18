@@ -402,12 +402,13 @@
   p.message::after {
     content: "";
     text-align: left;
-    display: inline;
-    animation: wordCycle 5400ms linear infinite;
+    display: inline-block;
+    animation: wordCycle 8400ms ease-in-out 350ms infinite;
   }
   
   p.message {
     margin: 0 auto;
+    max-width: 700px;
     text-align: left;
     padding-top: 2rem;
     color: var(--offWhite);
@@ -416,6 +417,120 @@
     font-family: 'Unbounded', monospace;
   }
   
+  @keyframes wordCycle {
+
+    /* 
+    first word 
+    */
+    0% {
+      content: "";
+      color: #FF3661;
+    }
+    1% {content: "m";}
+    2% {content: "ma";}
+    3% {content: "mag";}
+    4% {content: "magi";}
+    5% {content: "magic";}
+    6% {content: "magica";}
+    7% {content: "magical";}
+      /* pause 11% */
+    18% {content: "magical";}
+    19% {content: "magica";}
+    20% {content: "magic";}
+    21% {content: "magi";}
+    22% {content: "mag";}
+    23% { content: "ma";}
+    24% { content: "m";}
+    25% {
+      content: "";
+      color: #FF3661;
+    }
+    
+    /* 
+    second word 
+    */
+    26% {
+      content: "";
+      color: #FF3694;
+    }
+    27% {content: "b";}
+    28% {content: "be";}
+    29% {content: "bea";}
+    30% {content: "beau";}
+    31% {content: "beaut";}
+    32% {content: "beauti";}
+    33% {content: "beautif";}
+    34% {content: "beautifu";}
+    35% {content: "beautiful";}
+      /* pause  6% */
+    41% {content: "beautiful";}
+    42% {content: "beautifu";}
+    43% {content: "beautif";}
+    44% {content: "beauti";}
+    45% {content: "beaut";}
+    46% {content: "beau";}
+    47% {content: "bea";}
+    48% {content: "be";}
+    49% {content: "b";}
+    50% {
+      content: "";
+      color: #FF3694;
+    }
+
+    /* 
+    third word 
+    */
+    51% {
+      content: "";
+      color: #A34EEF;
+    }
+    56% {content: "f";}
+    60% {content: "fu";}
+    64% {content: "fun";}
+      /* pause 6% */
+    70% {content: "fun";}
+    71% {content: "fu";}
+    72% {content: "f";}
+    73% {
+      content: "";
+      color: #A34EEF;
+    }
+
+    /* 
+    fourth word 
+    */
+    74% {
+      content: "";
+      color: #F2CB4E;
+    }
+    75% {content: "i";}
+    76% {content: "in";}
+    77% {content: "int";}
+    78% {content: "inte";}
+    79% {content: "inter";}
+    80% {content: "intere";}
+    81% {content: "interes";}
+    82% {content: "interest";}
+    83% {content: "interesti";}
+    84% {content: "interestin";}
+    85% {content: "interesting";}
+    /* pause 4% */
+    89% {content: "interesting";}
+    90% {content: "interestin";}
+    91% {content: "interesti";}
+    92% {content: "interest";}
+    93% {content: "interes";}
+    94% {content: "intere";}
+    95% {content: "inter";}
+    96% {content: "inte";}
+    97% {content: "int";}
+    98% {content: "in";}
+    99% {content: "i";}
+    100% {
+      content: "";
+      color: #F2CB4E;
+    }
+  }
 
 /*
 === IMAGE GRIDS ==========================================================
@@ -678,60 +793,6 @@
     100% {
       opacity: 0;
       visibility: hidden;
-    }
-  }
-  
-  @keyframes wordCycle {
-    0% {
-      content: "magical";
-      color: #FF3661;
-    }
-  
-    20% {
-      content: "magical";
-      color: #FF3661;
-    }
-
-    21% {
-      content: "beautiful";
-      color: #FF3694;
-    }
-
-    40% {
-      content: "beautiful";
-      color: #FF3694;
-    }
-
-    41% {
-      content: "fun";
-      color: #A34EEF;
-    }
-  
-    60% {
-      content: "fun";
-      color: #A34EEF;
-    }
-
-    61% {
-      content: "stunning";
-      color: #36FFA1;
-    }
-  
-    80% {
-      content: "stunning";
-      color: #36FFA1;
-    }
-  
-    81% {
-      content: "interesting";
-      color: #F2CB4E;
-      opacity: 1;
-    }
-
-    100% {
-      content: "interesting";
-      color: #F2CB4E;
-      opacity: 1;
     }
   }
   

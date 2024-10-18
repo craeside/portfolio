@@ -179,8 +179,8 @@
   }
 
   .highlight, .underscore, .circle {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
   }
 
   .highlight::after {
@@ -396,63 +396,141 @@
     padding: 10vh 10vw;
     left: 0;
     z-index: 10;
-    font-size: 2rem;
     background: var(--black);
-  }
-  
-  .load-bar {
-    width: 100%;
-    height: 150px;
-    margin: 0 auto;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .line {
-    width: 1px;
-    background: var(--offWhite);
-    display: inline-block;
-    height: 100%;
-    margin: 0px 2px;
-    opacity: 0;
-    vertical-align: bottom;
-    animation: fade-in-and-out 4400ms ease-out infinite;
-  }
-  
-  .load-bar .line:nth-of-type(2n+1) {
-    animation-delay: 300ms;
-  }
-  
-  .load-bar .line:nth-of-type(3n+2) {
-    animation-delay: 400ms;
-    animation-duration: 1550ms;
-  }
-
-  .load-bar .line:nth-of-type(6n+3) {
-    animation-delay: 600ms;
-    animation-duration: 1850ms;
-  }
-  
-  .load-bar .line:nth-of-type(5n+3) {
-    animation-delay: 500ms;
-    animation-duration: 1500ms;
   }
   
   p.message::after {
     content: "";
     text-align: left;
-    width: 10vw;
-    animation: imWaiting 5400ms linear infinite;
+    display: block;
+    animation: wordCycle 7400ms cubic-bezier(0.165, 0.84, 0.44, 1) 250ms infinite;
   }
   
-  #loader p {
+  p.message {
     margin: 0 auto;
-    text-align: center;
-    padding-top: 5vh;
+    max-width: 420px;
+    text-align: left;
+    padding-top: 2rem;
+    color: var(--offWhite);
+    font-size: 6rem;
+    font-weight: 500;
+    font-family: 'Unbounded', monospace;
   }
   
+  @keyframes wordCycle {
+
+    /* 
+    first word 
+    */
+    0% {
+      content: "";
+      color: #FF3661;
+    }
+    1% {content: "m";}
+    2% {content: "ma";}
+    3% {content: "mag";}
+    4% {content: "magi";}
+    5% {content: "magic";}
+    6% {content: "magica";}
+    7% {content: "magical";}
+      /* pause 11% */
+    18% {content: "magical";}
+    19% {content: "magica";}
+    20% {content: "magic";}
+    21% {content: "magi";}
+    22% {content: "mag";}
+    23% { content: "ma";}
+    24% { content: "m";}
+    25% {
+      content: "";
+      color: #FF3661;
+    }
+    
+    /* 
+    second word 
+    */
+    26% {
+      content: "";
+      color: #FF3694;
+    }
+    27% {content: "b";}
+    28% {content: "be";}
+    29% {content: "bea";}
+    30% {content: "beau";}
+    31% {content: "beaut";}
+    32% {content: "beauti";}
+    33% {content: "beautif";}
+    34% {content: "beautifu";}
+    35% {content: "beautiful";}
+      /* pause  6% */
+    41% {content: "beautiful";}
+    42% {content: "beautifu";}
+    43% {content: "beautif";}
+    44% {content: "beauti";}
+    45% {content: "beaut";}
+    46% {content: "beau";}
+    47% {content: "bea";}
+    48% {content: "be";}
+    49% {content: "b";}
+    50% {
+      content: "";
+      color: #FF3694;
+    }
+
+    /* 
+    third word 
+    */
+    51% {
+      content: "";
+      color: #A34EEF;
+    }
+    56% {content: "f";}
+    60% {content: "fu";}
+    64% {content: "fun";}
+      /* pause 6% */
+    70% {content: "fun";}
+    71% {content: "fu";}
+    72% {content: "f";}
+    73% {
+      content: "";
+      color: #A34EEF;
+    }
+
+    /* 
+    fourth word 
+    */
+    74% {
+      content: "";
+      color: #F2CB4E;
+    }
+    75% {content: "i";}
+    76% {content: "in";}
+    77% {content: "int";}
+    78% {content: "inte";}
+    79% {content: "inter";}
+    80% {content: "intere";}
+    81% {content: "interes";}
+    82% {content: "interest";}
+    83% {content: "interesti";}
+    84% {content: "interestin";}
+    85% {content: "interesting";}
+    /* pause 4% */
+    89% {content: "interesting";}
+    90% {content: "interestin";}
+    91% {content: "interesti";}
+    92% {content: "interest";}
+    93% {content: "interes";}
+    94% {content: "intere";}
+    95% {content: "inter";}
+    96% {content: "inte";}
+    97% {content: "int";}
+    98% {content: "in";}
+    99% {content: "i";}
+    100% {
+      content: "";
+      color: #F2CB4E;
+    }
+  }
 
 /*
 === IMAGE GRIDS ==========================================================
@@ -494,7 +572,7 @@
     margin-left: 16px;
     background: var(--offWhite);
     color: var(--black);
-    font-family: 'Unbounded', sans-serif;
+    font-family: 'Unbounded', monospace;
     margin: 0;
     transition: all 350ms cubic-bezier(0.22, 1, 0.36, 1) 50ms;
   }
@@ -718,143 +796,6 @@
     }
   }
   
-  @keyframes imWaiting {
-    0% {
-      content: "";
-    }
-  
-    1% {
-      content: "y";
-    }
-  
-    2% {
-      content: "yo";
-    }
-  
-    3% {
-      content: "you";
-    }
-  
-    4% {
-      content: "you ";
-    }
-  
-    5% {
-      content: "you a";
-    }
-  
-    6% {
-      content: "you ar";
-    }
-  
-    7% {
-      content: "you are";
-    }
-  
-    8% {
-      content: "you are ";
-    }
-  
-    9% {
-      content: "you are l";
-    }
-  
-    10% {
-      content: "you are lo";
-    }
-  
-    11% {
-      content: "you are loa";
-    }
-  
-    12% {
-      content: "you are load";
-    }
-  
-    13% {
-      content: "you are loadi";
-    }
-  
-    14% {
-      content: "you are loadin";
-    }
-  
-    15% {
-      content: "you are loading";
-    }
-  
-    16% {
-      content: "you are loading ";
-    }
-  
-    17% {
-      content: "you are loading .";
-    }
-  
-    18% {
-      content: "you are loading ..";
-    }
-  
-    19% {
-      content: "you are loading ...";
-    }
-  
-    20% {
-      content: "you are loading ...";
-    }
-  
-    30% {
-      content: "you are loading ..";
-    }
-  
-    40% {
-      content: "you are loading .";
-    }
-  
-    50% {
-      content: "you are loading ";
-    }
-  
-    60% {
-      content: "you are loading .";
-    }
-  
-    70% {
-      content: "you are loading ..";
-    }
-  
-    80% {
-      content: "you are loading ...";
-    }
-  
-    90% {
-      content: "you are loading ....";
-      opacity: 1;
-    }
-  
-    100% {
-      content: "you are loading ....";
-      opacity: 0;
-    }
-  }
-  
-  @keyframes fade-in-and-out {
-    0% {
-      opacity: 0;
-      height: 0%;
-    }
-  
-    50% {
-      opacity: 0.6;
-      height: 80%;
-    }
-  
-    100% {
-      opacity: 0;
-      height: 100%;
-    }
-  }
-  
   .fadeIn {
     animation: fadeIn 1800ms ease-in 2400ms forwards;
   }
@@ -1061,6 +1002,10 @@
       width: 90%;
       float: left;
       margin: 2rem 0;
+    }
+
+    p.message {
+      font-size: 4.5rem;
     }
   }
   

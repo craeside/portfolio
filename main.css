@@ -179,8 +179,8 @@
   }
 
   .highlight, .underscore, .circle {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
   }
 
   .highlight::after {

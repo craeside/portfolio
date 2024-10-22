@@ -35,6 +35,9 @@
     font-style: italic;
   }
   
+  html {
+    background-color: var(--black);
+  }
   
   body, html {
     color: var(--black);
@@ -44,7 +47,6 @@
     font-feature-settings: 'tnum' on, 'lnum' on, 'ordn' on;
     font-weight: 100;
     font-style: normal;
-    background-color: var(--offWhite);
     background-image: none;
     background-repeat: no-repeat;
     background-size: cover;
@@ -52,6 +54,7 @@
   }
 
   body {
+    background-color: var(--offWhite);
     position: relative;
     overflow-x: hidden;
     width: 100%;

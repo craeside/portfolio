@@ -291,8 +291,7 @@
     height: auto;
     max-width: 900px;
     opacity: 0;
-    animation: 
-    fadeIn 1200ms ease-in-out 2300ms forwards;
+    animation: fadeIn 1200ms ease-in-out 600ms forwards;
     transition: filter 350ms cubic-bezier(0.165, 0.84, 0.44, 1);
   }
   
@@ -310,12 +309,12 @@
     flex-direction: row;
     justify-content: center;
     opacity: 0;
-    animation: fadeIn 1600ms ease-in-out 2600ms forwards;
+    animation: fadeIn 1600ms ease-in-out 800ms forwards;
   }
 
   #homepage h3 {
     opacity: 0;
-    animation: fadeIn 1400ms ease-in-out 3200ms forwards;
+    animation: fadeIn 1400ms ease-in-out 700ms forwards;
     font-weight: 100;
   }
 
@@ -332,7 +331,7 @@
     height: 100vh;
     z-index: 0;
     opacity: 0;
-    animation: fadeIn 1800ms ease-in-out 3s forwards;
+    animation: fadeIn 1800ms ease-in-out 1s forwards;
   }
 
   .link-subtitle {
@@ -793,26 +792,26 @@
   
   @keyframes fadeOut {
     0% {
-      opacity: 1;
       visibility: visible;
+      opacity: 1;
     }
   
-    99% {
-      opacity: 0;
-      visibility: hidden;
-    }
     100% {
+      visibility: hidden;
       opacity: 0;
-      display: none;
     }
   }
+
+  .removeMe {
+      display: none;
+    }
   
   .fadeIn {
-    animation: fadeIn 1800ms ease-in 2400ms forwards;
+    animation: fadeIn 800ms ease-in forwards;
   }
   
   .fadeOut {
-    animation: fadeOut 1s ease-in-out 1400ms forwards;
+    animation: fadeOut 450ms ease-in-out forwards;
   }
 
   @keyframes threeDee {

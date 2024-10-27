@@ -20,13 +20,19 @@ function splashRemove() {
 }
 
 function contentFadeIn() {
-    document.getElementById("main").classList.add("fadeIn");
+    var fadeInContent = document.querySelectorAll(".fadePrep");
+	var a;
+
+	for (a of fadeInContent) {
+		a.classList.remove("fadePrep");
+		a.classList.add("fadeIn");
+	}
 
     var workGrid = document.querySelectorAll(".work-grid");
-    var i;
+    var b;
 
-    for (i of workGrid) {
-      i.classList.add("grid-fade");
+    for (b of workGrid) {
+      b.classList.add("grid-fade");
     }
 }
 

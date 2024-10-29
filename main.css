@@ -704,7 +704,7 @@
     font-family: 'Unbounded', monospace;
     font-style: normal;
     display: flex;
-    padding: 3vw 48px 0 48px;
+    padding: 48px 48px 0 48px;
     flex-direction: row-reverse;
     gap: 16px;
     z-index: 1;
@@ -875,6 +875,22 @@
     h1 {
       font-size: 5rem;
     }
+
+    #main {
+      padding: 48px 0;
+    }
+    .section {
+      padding: 0 32px;
+    }
+    #header-menu {
+      padding: 48px 32px 0 32px;
+    }
+
+    .content {
+      max-width: none;
+      padding: 0 32px;
+    }
+
     .subtitle, #homepage #main p.subtitle {
       font-size: 3rem;
     }
@@ -887,14 +903,6 @@
       opacity: 1;
     }
 
-    #lines {
-      width: 200vw;
-      height: 80vh;
-    }
-
-    #header-menu {
-      padding: 10vw 10vw 0 10vw;
-    }
     .work-grid {
       height: 60vw;
     }
@@ -933,7 +941,7 @@
     }  
   }
   
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 768px) {
     .grid-container {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -949,10 +957,6 @@
     }
     #homepage #header-menu {
       padding: 10vw 10vw 0 10vw;
-    }
-    #main {
-      padding: 20vw 10vw;
-      gap: 24px;
     }
 
     .subtitle {
@@ -1006,14 +1010,26 @@
       padding: 0;
     }
 
-    aside {
-      width: 90%;
-      float: left;
-      margin: 2rem 0;
-    }
-
     p.message {
       font-size: 4.5rem;
     }
   }
   
+  @media only screen and (max-width: 550px) {
+
+    .section {
+      padding: 0 24px;
+    }
+    #header-menu {
+      padding: 32px 24px 0 24px;
+    }
+
+    .content {
+      padding: 0 24px;
+    }
+    aside {
+      width: 90%;
+      float: left;
+      margin: 2rem 0;
+    }
+  }

@@ -36,7 +36,7 @@
   }
   
   html {
-    background-color: var(--black);
+    background-color: var(--offWhite);
   }
   
   body, html {
@@ -291,9 +291,10 @@
     height: auto;
     max-width: 900px;
     opacity: 0;
-    animation: 
-    fadeIn 1200ms ease-in-out 2300ms forwards;
-    transition: filter 350ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-duration: 1200ms;
+    animation-delay: 800ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
   }
   
 
@@ -310,29 +311,24 @@
     flex-direction: row;
     justify-content: center;
     opacity: 0;
-    animation: fadeIn 1600ms ease-in-out 2600ms forwards;
+    animation-duration: 800ms;
+    animation-delay: 1600ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
   }
 
   #homepage h3 {
-    opacity: 0;
-    animation: fadeIn 1400ms ease-in-out 3200ms forwards;
     font-weight: 100;
+    opacity: 0;
+    animation-duration: 800ms;
+    animation-timing-function: ease-in;
+    animation-delay: 1000ms;
+    animation-fill-mode: forwards;
   }
 
   #homepage #main {
     color: var(--offWhite);
     background-color: var(--black);
-  }
-
-  #lines {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    opacity: 0;
-    animation: fadeIn 1800ms ease-in-out 3s forwards;
   }
 
   .link-subtitle {
@@ -708,7 +704,7 @@
     font-family: 'Unbounded', monospace;
     font-style: normal;
     display: flex;
-    padding: 3vw 48px 0 48px;
+    padding: 48px 48px 0 48px;
     flex-direction: row-reverse;
     gap: 16px;
     z-index: 1;
@@ -781,9 +777,6 @@
       opacity: 0;
       transform: translateY(8px);
     }
-    50% {
-      opacity: 0;
-    }
   
     100% {
       opacity: 1;
@@ -793,26 +786,30 @@
   
   @keyframes fadeOut {
     0% {
-      opacity: 1;
       visibility: visible;
+      opacity: 1;
     }
   
-    99% {
-      opacity: 0;
-      visibility: hidden;
-    }
     100% {
+      visibility: hidden;
       opacity: 0;
-      display: none;
     }
+  }
+
+  .fadePrep {
+    opacity: 0;
   }
   
   .fadeIn {
-    animation: fadeIn 1800ms ease-in 2400ms forwards;
+    animation: fadeIn 800ms ease-in forwards;
   }
   
   .fadeOut {
-    animation: fadeOut 1s ease-in-out 1400ms forwards;
+    animation: fadeOut 450ms ease-in-out forwards;
+  }
+
+  .removeMe {
+    display: none;
   }
 
   @keyframes threeDee {
@@ -878,6 +875,22 @@
     h1 {
       font-size: 5rem;
     }
+
+    #main {
+      padding: 48px 0;
+    }
+    .section {
+      padding: 0 32px;
+    }
+    #header-menu {
+      padding: 48px 32px 0 32px;
+    }
+
+    .content {
+      max-width: none;
+      padding: 0 32px;
+    }
+
     .subtitle, #homepage #main p.subtitle {
       font-size: 3rem;
     }
@@ -890,14 +903,6 @@
       opacity: 1;
     }
 
-    #lines {
-      width: 200vw;
-      height: 80vh;
-    }
-
-    #header-menu {
-      padding: 10vw 10vw 0 10vw;
-    }
     .work-grid {
       height: 60vw;
     }
@@ -936,7 +941,7 @@
     }  
   }
   
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 768px) {
     .grid-container {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -952,10 +957,6 @@
     }
     #homepage #header-menu {
       padding: 10vw 10vw 0 10vw;
-    }
-    #main {
-      padding: 20vw 10vw;
-      gap: 24px;
     }
 
     .subtitle {
@@ -1009,14 +1010,26 @@
       padding: 0;
     }
 
-    aside {
-      width: 90%;
-      float: left;
-      margin: 2rem 0;
-    }
-
     p.message {
       font-size: 4.5rem;
     }
   }
   
+  @media only screen and (max-width: 550px) {
+
+    .section {
+      padding: 0 24px;
+    }
+    #header-menu {
+      padding: 32px 24px 0 24px;
+    }
+
+    .content {
+      padding: 0 24px;
+    }
+    aside {
+      width: 90%;
+      float: left;
+      margin: 2rem 0;
+    }
+  }

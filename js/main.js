@@ -3,25 +3,52 @@
 
 INDEX
 
-1. page loader
+1. splash page
 2. smooth scroll
 
 
 */
 
-// 1. page loader
+// 1. splash things
 
-function loadMe() {
-    document.getElementById("main").classList.add("fadeIn");
-		document.getElementById("loader").classList.add("fadeOut");
+function splashFadeOut() {
+	document.getElementById("loader").classList.add("fadeOut");
+}
+
+function splashRemove() {
+	document.getElementById("loader").classList.add("removeMe");
+}
+
+function contentFadeIn() {
+    var fadeInContent = document.querySelectorAll(".fadePrep");
+	var a;
+
+	for (a of fadeInContent) {
+		a.classList.remove("fadePrep");
+		a.classList.add("fadeIn");
+	}
 
     var workGrid = document.querySelectorAll(".work-grid");
-    var i;
+    var b;
 
-    for (i of workGrid) {
-      i.classList.add("grid-fade");
+    for (b of workGrid) {
+      b.classList.add("grid-fade");
     }
 }
+
+const firstTime = localStorage.getItem('visited');
+
+if (firstTime == null) {
+	window.setInterval(splashFadeOut, 4800);
+	window.setInterval(splashRemove, 5250);
+	window.setInterval(contentFadeIn, 5250);
+	localStorage.setItem('visited', 1)
+	}
+	else {
+		splashRemove();
+		contentFadeIn();
+	}
+
 
 // 2. smooth scroll
 
@@ -98,16 +125,5 @@ function smoothScroll(target, speed, smooth) {
 	})();
 }
 
-let loadingTimeout = setTimeout(loadMe, 5000); // loading delay for minimum splash screen time
 
-// execute things when the window loads
 
-window.onload=function() {
-
-	if(document.referrer.split('/')[2]!=location.hostname){ // User came from other domain or from direct
-		loadingTimeout;	// removes loader after delay
-	}
-	else { // User came from another page on your site
-		loadMe(); // this hides the loading animation as soon as the page is loaded
-	}
-	}

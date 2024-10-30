@@ -155,10 +155,6 @@
     justify-content: flex-start;
   }
 
-  .column {
-    width: fit-content;
-  }
-
   .subheader {
     font-family: 'Unbounded', monospace;
     font-style: normal;
@@ -879,7 +875,7 @@
     #main {
       padding: 48px 0;
     }
-    .section {
+    .section, .project-2-up {
       padding: 0 32px;
     }
     #header-menu {
@@ -931,7 +927,7 @@
     }
 
     body.design-project .project-2-up .column .project-img {
-      width: 100%;
+      width: auto;
       height: auto;
       margin: 0;
     }

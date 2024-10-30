@@ -4,14 +4,6 @@
 <!--[if IE 8]><html class="preIE9"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
 <head>
-  <!-- Google Analytics -->
-  <script>
-    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', 'UA-68619015-1', 'auto');
-    ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
-    <!-- End Google Analytics -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -19,24 +11,22 @@
   <meta name="description" content="Chris Raeside designed a network operations monitoring tool for Viasat">
 <link rel="stylesheet" href="../main.css" type="text/css">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.ico">
-<script src="/js/main.js"></script>
 </head>
 
-<body onbeforeunload="fadeOut()" id="viasat-noc" class="design-project">
+<body onbeforeunload="fadeOut()" id="viasat-noc" class="design-project fadePrep">
   <!-- loader -->
   <div id="loader">
     <p class="message">Let’s make the internet a little more </p>
   </div>
   <!-- main content -->
   <div id="header-menu">
-    <div class="nav">
+    <div class="nav" class="fadePrep">
     <a href="/design.html">Design</a>
-    <!--<a href="/development.html">Dev</a>-->
     <a href="/about.html">About</a>
     </div>
       <a href="/design.html">back to design work</a>
   </div>
-  <div id="main">
+  <div id="main" class="fadePrep">
     <h1>Network monitoring application</h1>
       <p class="project-intro">“Dark UI? What’s that? Wait… you can make it look like that?”<br /><br />The goal of the project was to design a tool that gives a network operations team a consolidated view of their network data, focused on alerts and problem solving. Disclaimer: This project has been changed from it's original version to protect the data of the client.</p>
       <div class="image-slider">
@@ -51,5 +41,6 @@
         </div>
       </div>
     </div>
+    <script src="../js/main.js"></script>
   </body>
 </html>

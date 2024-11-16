@@ -233,6 +233,29 @@
     margin: 96px 0 16px 0;
   }
 
+  .image-marquee {
+    overflow: clip;
+    height: 25vw;
+    margin-bottom: 10vh;
+    width: 100%;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    flex-direction: row;
+    padding-left: 16px;
+    gap: 16px;
+    animation: marquee 40s linear infinite;
+  }
+
+  .image-marquee img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+
 /*
 === HOME ========================================================================================================
 */
@@ -374,7 +397,7 @@
   background: #232323;
   opacity: 1;
 }
-#about .project-img > img {
+#about img {
   -webkit-filter:   contrast(120%) grayscale(100%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%);
           filter:   contrast(120%) grayscale(100%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%);
   mix-blend-mode: none;
@@ -806,6 +829,12 @@
 
   .removeMe {
     display: none;
+  }
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
   }
 
   @keyframes threeDee {

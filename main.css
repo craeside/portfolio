@@ -250,11 +250,32 @@
     animation: marquee 40s linear infinite;
   }
 
-  .image-marquee img {
+  #about .image-marquee img {
     width: auto;
     height: 100%;
     object-fit: cover;
+    transition: all 450ms cubic-bezier(0.22, 1, 0.36, 1) 50ms;
   }
+
+  #about .image-marquee img:hover {
+    -webkit-filter:   
+      contrast(120%) 
+      grayscale(50%) 
+      hue-rotate(0deg) 
+      invert(0%) 
+      opacity(100%) 
+      saturate(110%) 
+      sepia(10%);
+    filter:   
+      contrast(120%) 
+      grayscale(50%) 
+      hue-rotate(0deg) 
+      invert(0%) 
+      opacity(100%) 
+      saturate(110%) 
+      sepia(20%);
+    transition: all 450ms cubic-bezier(0.22, 1, 0.36, 1) 50ms;
+          }
 
 /*
 === HOME ========================================================================================================
@@ -398,8 +419,8 @@
   opacity: 1;
 }
 #about img {
-  -webkit-filter:   contrast(120%) grayscale(100%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%);
-          filter:   contrast(120%) grayscale(100%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%);
+  -webkit-filter:   contrast(120%) grayscale(100%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(10%);
+          filter:   contrast(120%) grayscale(100%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(10%);
   mix-blend-mode: none;
 }
 
@@ -1037,6 +1058,10 @@
 
     p.message {
       font-size: 4.5rem;
+    }
+
+    .image-marquee {
+      height: 35vh;
     }
   }
   
